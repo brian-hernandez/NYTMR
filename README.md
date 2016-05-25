@@ -14,9 +14,7 @@ Written in Java using Android Studio.
 
 This directory contains the full implementation of a basic application for
 the Android platform, demonstrating the basic facilities that applications
-will use.  You can run the application either directly from the "test"
-list in the app launcher (it is named Skeleton App) or by selecting it from
-the top list in the Sample Code app.
+will use.
 
 The files contained here:
 
@@ -33,7 +31,8 @@ to the user (in the app launcher's list), handle data types, etc.
 Under this directory is the Java source for for your application.
 
 
-**src/com/android/skeletonapp/SkeletonActivity.java**
+**src/main/java/com/cs454/nytmr/MainActivity.java**
+
 
 This is the implementation of the "activity" feature described in
 AndroidManifest.xml.  The path each class implementation is
