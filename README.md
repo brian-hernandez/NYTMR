@@ -1,6 +1,6 @@
 # :black_large_square: NYTMR - NY Times Movie Reviews :black_large_square:
 
-This is an application that makes use of the [NY Times Movie Review API](https://developer.nytimes.com).
+This is a simple application that makes use of the [NY Times Movie Review API](https://developer.nytimes.com).
 
 
 Written in Java using Android Studio.
