@@ -46,3 +46,16 @@ tag and CLASS comes from the class in the <activity> tag.
 Under this directory are the resources for your application.
 
 
+**Tasks**
+
+- [X] Build a new Android Studio Project with a main activity with a fragment. In the main activity's fragment put a listivew in its xml layout. 
+
+- [X] Get an api key from the api above, and create a url to fetch 20 movie reviews. Put this url into a browser to view the returned JSON. Take the JSON to a JSON formatter on the web (Google it) and place the formatted JSON into a text file. Submit that here, separate from your Android Studio project. 
+
+- [X] Create an AsyncTask to handle a network call to the api. The type parameters should be <Void, Void, String[]>. On the background thread, make the api call and retrieve the JSON. Log both the url used and the JSON returned.
+
+- [X] Using org.json package unpack the JSON to get an List of movie titles. Display these in your listiview.
+
+- [X] Attach an item click listener to the listview. When it is clicked, it should show a toast with the text in the list item.
+
+- [X] Set up a menu item to refresh this list. When it is clicked, it should create an instance of the AsyncTask you made earlier and refresh the data. 
