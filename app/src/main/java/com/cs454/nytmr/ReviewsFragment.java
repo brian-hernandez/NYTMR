@@ -37,7 +37,7 @@ import java.util.List;
 public class ReviewsFragment extends Fragment {
 
     private ArrayAdapter<String> mMovieAdapter;
-    private String[] a;
+    public String[] a;
 
     public ReviewsFragment() {
     }
@@ -69,12 +69,22 @@ public class ReviewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
+        // Sample data, used in order to test the refresh button
         String[] data = {
                 "Pulp Fiction",
                 "Lord of the Rings",
                 "Cloud with a Chance of Meatballs",
                 "Trainspotting",
                 "2001: A Space Odyssey"
+        };
+
+        final String[] b = {
+                "Movie about stuff",
+                "Tolkien epic trilogy",
+                "animated film",
+                "Drugs",
+                "Kubrick's odyssey"
         };
 
         List<String> movieList = new ArrayList<>(Arrays.asList(data));
@@ -85,7 +95,7 @@ public class ReviewsFragment extends Fragment {
                 R.id.list_item_reviews_textview, // The ID of the textview to populate.
                 movieList);
 
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         ListView listView = (ListView) rootView.findViewById(R.id.listview_reviews);
         listView.setAdapter(mMovieAdapter);
@@ -94,8 +104,14 @@ public class ReviewsFragment extends Fragment {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                //String mov = mMovieAdapter.getItem(position);
-                String mov = a[position];
+                String mov;
+                if(a != null) {
+                    //mov = mMovieAdapter.getItem(position);
+                    mov = a[position];
+                }else{
+                    // mov = mMovieAdapter.getItem(position);
+                     mov = b[position];
+                }
                 Toast.makeText(getActivity(), mov, Toast.LENGTH_LONG).show();
 
             }
@@ -133,7 +149,7 @@ public class ReviewsFragment extends Fragment {
                 summary = movie.getString(OWM_SUMMARY_SHORT);
                 //a[i] = headline;
                 a[i] = summary;
-                resultStrs[i] = "Film " + (i + 1) + ": " + title;
+                resultStrs[i] = (i+1)+ ". " + headline;
             }
 
             for (String s : resultStrs) {
